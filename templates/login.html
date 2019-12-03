@@ -1,33 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        #sectionOne{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+    </style>
+    <title>Fide Authentication | Sign in</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
-
 <body class="sticky-header">
+<!-- navbar page -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Fide</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <form class="form-inline my-2 my-lg-0">
+            <a class="btn btn-outline-success my-2 my-sm-0" href="index.html"><i data-feather="home"></i></a>
+        </form>
+    </div>
+</nav>
 <!--Start login Section-->
-<section class="login-section">
+<section class="login-section" id="sectionOne">
     <div class="container">
         <div class="row">
             <div class="login-wrapper">
                 <div class="login-inner">
-                    <h1 class="header-title text-center">Login</h1>
-
                     <form action="login/1" method="post">
                         <div class="form-group">
                             <input type="text" name="email" class="form-control" placeholder="Email(Username)">
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="password" class="form-control" placeholder="Password">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Login" class="btn btn-primary btn-block">
@@ -44,13 +64,13 @@
 
                         <div class="pull-right">
                             <form action="/login/2" class="a-link" method="post">
-                                <button type="submit" class="fa fa-unlock-alt"> Forgot password?</button>
+                                <button type="submit" class="btn btn-outline-primary"> Forgot password?</button>
                             </form>
                         </div>
                     </div>
                     <!--<form action="/static/login/3" class="a-link" method="post">-->
                     <div class="form-group text-center">
-                        Don't have an account? <a type="submit" href="/register">Sign Up</a>
+                        Don't have an account? <a type="submit" href="register.html">Sign Up</a>
                     </div>
                     <!--</form>-->
 
@@ -60,13 +80,25 @@
         </div>
     </div>
 </section>
+<div class="fixed-bottom">
+    <div class="container">
+        <div align="center">
+            <p id="dateAndTime"></p>
+        </div>
+    </div>
+</div>
 <!--End login Section-->
-
 <!--Begin core plugin -->
 <script src="static/assets/js/jquery-3.4.1.min.js"></script>
 <script src="static/assets/js/bootstrap.min.js"></script>
 <!-- End core plugin -->
-
+<script>
+    feather.replace()
+</script>
+<script>
+    var d = new Date();
+    document.getElementById("dateAndTime").innerHTML = d.getFullYear();
+</script>
 </body>
 
 </html>
