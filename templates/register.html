@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!doctype html>
+<html lang="en">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title></title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        #sectionOne{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+    </style>
+    <title>Fide Authentication | Sign up</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
 <script>
     function sc1() {
         document.getElementById("tt").style.top = (document.documentElement.scrollTop + (document.documentElement.clientHeight - document.getElementById("tt").offsetHeight) / 2) + "px";
@@ -18,8 +30,21 @@
 </script>
 
 <body onload="sc1()">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Fide</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <form class="form-inline my-2 my-lg-0">
+            <a class="btn btn-outline-success my-2 my-sm-0" href="login.html">
+                <i data-feather="home"></i>
+            </a>
+        </form>
+    </div>
+</nav>
 <div id="tt" style='width:400px;height:600px;position:absolute;'>
 <!--Start login Section-->
 <section class="login-section">
@@ -44,7 +69,7 @@
                                                            maxLength="50" value=""
                                                            onblur="__changeUserName('email');"
                                                            placeholder="Email/Username">
-                                                    <p>Please make sure your input is the correct email from </p>
+                                                        <small id="emailHelp" class="form-text text-muted">Please make sure your input is the correct email from .</small>
                                                 <br/>
                                                 </div>
                                                 </span>
@@ -78,7 +103,7 @@
                                                        value=""
                                                        onblur="checkPwd1(this.value);"
                                                        placeholder="Password"/>
-                                            <p>Make sure it is the same as you typed above</p >
+                                                <small id="emailHelp" class="form-text text-muted">Make sure it is the same as you typed above</small>
                                             <br/>
                                             </div>
                                             </span>
@@ -109,7 +134,7 @@
                                         <div id="div_submit" class="div_submit">
                                             <div class="form-group text-center">
                                                 Already have an account?
-                                                <a href="/login">Sign In </a>
+                                                <a href="login.html">Sign In </a>
                                             </div>
                                          </div>
                                         </div>
@@ -128,5 +153,26 @@
     </div>
 </section>
 </div>
+<div class="fixed-bottom">
+    <div class="container">
+        <div align="center">
+            <p id="dateAndTime"></p>
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script>
+    feather.replace()
+</script>
+<script>
+    var d = new Date();
+    document.getElementById("dateAndTime").innerHTML = d.getFullYear();
+</script>
+
 </body>
 </html>
